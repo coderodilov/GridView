@@ -20,5 +20,21 @@ class DataProvider {
         R.drawable.twelwe,
     )
 
+    private val titleList: List<String> = listOf(
+       "Messi",
+       "Tanimadim",
+       "Bilmiman",
+       "Yosh bola",
+       "Yaxshi bola",
+       "Sochi uzun",
+       "Mbappe debdi",
+       "Tanish",
+       "Messi",
+       "Messi",
+       "Ronaldo",
+       "Ronaldo",
+    )
+
+    fun getTitleList(): List<String> = titleList
     fun getImageList(): List<Int> = imageList
 }
