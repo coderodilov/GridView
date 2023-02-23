@@ -1,5 +1,6 @@
 package uz.coderodilov.gridview
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,16 +22,17 @@ class MainActivity : AppCompatActivity() {
 
         binding.gridView.adapter = gridAdapter
 
-        binding.btnGridThree.setOnClickListener{
+        binding.btnGridThree.setOnClickListener {
             3.changeColumnCount()
         }
 
-        binding.btnGridTwo.setOnClickListener{
+        binding.btnGridTwo.setOnClickListener {
             2.changeColumnCount()
         }
 
-        binding.gridView.setOnItemClickListener{ _, _, _, _ ->
-            Toast.makeText(this, "Bosildi", Toast.LENGTH_SHORT).show()
+        binding.gridView.setOnItemClickListener { _, _, _, _ ->
+            val intent = Intent(this, DetailActivity::class.java)
+            startActivity(intent)
         }
 
     }
