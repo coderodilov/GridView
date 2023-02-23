@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package uz.coderodilov.gridview.adapter
 
 import android.content.Context
@@ -6,38 +8,38 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
-import android.widget.TextView
+import uz.coderodilov.gridview.MainActivity
 import uz.coderodilov.gridview.R
 
-import uz.coderodilov.gridview.model.ImagesModel
+class GridAdapter( private val imageList: List<Int>,
+                   private val context: Context): BaseAdapter() {
 
-@Suppress("NAME_SHADOWING")
-class GridAdapter(private var itemImagesModel: List<Int>, context: Context): BaseAdapter() {
+    private var layoutInflater: LayoutInflater? = null
 
-    //Layout inflater yaratish
-    private var layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-    override fun getCount(): Int{
-        return itemImagesModel.size
+    override fun getCount(): Int {
+        return imageList.size
     }
 
     override fun getItem(position: Int): Any {
-        return itemImagesModel[position]
+        return imageList[position]
     }
 
     override fun getItemId(position: Int): Long {
-        return position.toLong()
+        return 0L
     }
 
     override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View {
         var view = view
+        if (layoutInflater == null){
+            layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        }
+
         if (view == null){
-            view = layoutInflater.inflate(R.layout.grid_view_item, viewGroup, false)
+            view = layoutInflater?.inflate(R.layout.grid_view_item, viewGroup, false)
         }
 
         val imageView = view?.findViewById<ImageView>(R.id.imageViewGridAdapter)
-
-        imageView!!.setImageResource(itemImagesModel[position])
+        imageView!!.setImageResource(imageList[position])
 
         return view!!
     }

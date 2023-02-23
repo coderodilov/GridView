@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val dataProvider = DataProvider()
-        val data = dataProvider.getImageList()
+        val imageList = dataProvider.getImageList()
 
-        val gridAdapter = GridAdapter(data, this)
+        val gridAdapter = GridAdapter(imageList, this)
 
         binding.gridView.adapter = gridAdapter
 
