@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
-import uz.coderodilov.gridview.MainActivity
 import uz.coderodilov.gridview.R
+import uz.coderodilov.gridview.databinding.GridViewItemBinding
 
-class GridAdapter( private val imageList: List<Int>,
+class GridAdapter(private val imageList: List<Int>,
                    private val context: Context): BaseAdapter() {
 
     private var layoutInflater: LayoutInflater? = null

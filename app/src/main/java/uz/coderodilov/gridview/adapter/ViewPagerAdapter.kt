@@ -13,4 +13,5 @@ class ViewPagerAdapter(private val context: Context): PagerAdapter() {
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         TODO("Not yet implemented")
     }
+
 }
