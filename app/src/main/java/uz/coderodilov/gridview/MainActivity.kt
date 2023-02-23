@@ -2,7 +2,6 @@ package uz.coderodilov.gridview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
 import uz.coderodilov.gridview.adapter.GridAdapter
 import uz.coderodilov.gridview.data.DataProvider
 import uz.coderodilov.gridview.databinding.ActivityMainBinding
