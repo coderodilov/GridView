@@ -18,30 +18,28 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/baseline_grid_on_24"
-            android:scaleType="fitCenter"
-            android:padding="5dp"
             android:background="@android:color/transparent"
-            tools:ignore="ContentDescription" />
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_grid_on_24"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/btn_grid_two"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:src="@drawable/baseline_grid_view_24"
-            android:scaleType="fitCenter"
             android:layout_toStartOf="@+id/btn_grid_three"
-            android:padding="3dp"
             android:background="@android:color/transparent"
-            tools:ignore="ContentDescription" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_grid_view_24"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </RelativeLayout>
 
     <GridView
         android:id="@+id/gridView"
         android:numColumns="2"
         tools:listitem="@layout/grid_view_item"
-        android:layout_margin="12dp"
-        android:layout_marginTop="2dp"
         android:verticalSpacing="4dp"
         android:horizontalSpacing="4dp"
         android:layout_width="match_parent"

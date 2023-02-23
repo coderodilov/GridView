@@ -2,6 +2,7 @@ package uz.coderodilov.gridview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import uz.coderodilov.gridview.adapter.GridAdapter
 import uz.coderodilov.gridview.data.DataProvider
 import uz.coderodilov.gridview.databinding.ActivityMainBinding
@@ -21,11 +22,20 @@ class MainActivity : AppCompatActivity() {
         binding.gridView.adapter = gridAdapter
 
         binding.btnGridThree.setOnClickListener{
-            binding.gridView.numColumns = 3
+            3.changeColumnCount()
         }
 
         binding.btnGridTwo.setOnClickListener{
-            binding.gridView.numColumns = 2
+            2.changeColumnCount()
         }
+
+        binding.gridView.setOnItemClickListener{ _, _, _, _ ->
+            Toast.makeText(this, "Bosildi", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private fun Int.changeColumnCount() {
+        binding.gridView.numColumns = this
     }
 }
