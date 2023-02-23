@@ -12,7 +12,7 @@ import uz.coderodilov.gridview.R
 import uz.coderodilov.gridview.model.ImagesModel
 
 @Suppress("NAME_SHADOWING")
-class GridAdapter(private var itemImagesModel: List<ImagesModel>, context: Context): BaseAdapter() {
+class GridAdapter(private var itemImagesModel: List<Int>, context: Context): BaseAdapter() {
 
     //Layout inflater yaratish
     private var layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -34,11 +34,10 @@ class GridAdapter(private var itemImagesModel: List<ImagesModel>, context: Conte
         if (view == null){
             view = layoutInflater.inflate(R.layout.grid_view_item, viewGroup, false)
         }
-        val tvImageTitle = view?.findViewById<TextView>(R.id.tvImageTitle)
+
         val imageView = view?.findViewById<ImageView>(R.id.imageViewGridAdapter)
 
-        tvImageTitle!!.text = itemImagesModel[position].name
-        imageView!!.setImageResource(itemImagesModel[position].image)
+        imageView!!.setImageResource(itemImagesModel[position])
 
         return view!!
     }

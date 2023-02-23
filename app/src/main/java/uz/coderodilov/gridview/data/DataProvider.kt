@@ -16,5 +16,18 @@ class DataProvider {
         ImagesModel(R.drawable.eight, "Engineer")
     )
 
+    private val imageList: List<Int> = listOf(
+        R.drawable.one,
+        R.drawable.two,
+        R.drawable.three,
+        R.drawable.four,
+        R.drawable.five,
+        R.drawable.six,
+        R.drawable.seven,
+        R.drawable.eight
+    )
+
+    fun getImageList(): List<Int> = imageList
+
     fun getDataList(): List<ImagesModel> = dataList
 }
