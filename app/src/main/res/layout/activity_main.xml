@@ -3,15 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#151515"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:text="Football Players"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/btn_grid_three"
@@ -38,14 +48,15 @@
 
     <GridView
         android:id="@+id/gridView"
-        android:numColumns="2"
-        android:layout_marginTop="12dp"
-        android:layout_margin="12dp"
-        tools:listitem="@layout/grid_view_item"
-        android:verticalSpacing="4dp"
-        android:horizontalSpacing="4dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_margin="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:columnWidth="0dp"
+        android:horizontalSpacing="4dp"
+        android:numColumns="2"
+        android:verticalSpacing="4dp"
+        tools:listitem="@layout/grid_view_item" />
 
 </LinearLayout>

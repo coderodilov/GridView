@@ -19,7 +19,6 @@ class ViewPagerAdapter(context: Context): PagerAdapter() {
     private val titleList = dataProvider.getTitleList()
     private var layoutInflater : LayoutInflater? = null
 
-
     init {
         layoutInflater =  context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     }
@@ -44,7 +43,6 @@ class ViewPagerAdapter(context: Context): PagerAdapter() {
         Objects.requireNonNull(container).addView(view)
         return view
     }
-
 
     override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
         container.removeView(obj as LinearLayout)
