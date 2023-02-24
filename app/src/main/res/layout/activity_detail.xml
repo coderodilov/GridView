@@ -9,11 +9,21 @@
     android:background="#151515"
     tools:context=".DetailActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_gravity="center"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_style"
+        android:gravity="center">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="250dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

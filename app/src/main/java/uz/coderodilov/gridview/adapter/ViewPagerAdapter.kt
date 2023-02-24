@@ -12,14 +12,16 @@ import uz.coderodilov.gridview.R
 import uz.coderodilov.gridview.data.DataProvider
 import java.util.Objects
 
-class ViewPagerAdapter(private val context: Context): PagerAdapter() {
+class ViewPagerAdapter(context: Context): PagerAdapter() {
+
     private val dataProvider = DataProvider()
     private val imageList = dataProvider.getImageList()
     private val titleList = dataProvider.getTitleList()
     private var layoutInflater : LayoutInflater? = null
 
+
     init {
-        layoutInflater = layoutInflater!!.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        layoutInflater =  context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     }
 
     override fun getCount(): Int {
@@ -41,6 +43,11 @@ class ViewPagerAdapter(private val context: Context): PagerAdapter() {
 
         Objects.requireNonNull(container).addView(view)
         return view
+    }
+
+
+    override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
+        container.removeView(obj as LinearLayout)
     }
 
 }

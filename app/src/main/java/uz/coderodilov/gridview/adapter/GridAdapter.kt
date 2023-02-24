@@ -2,6 +2,7 @@
 
 package uz.coderodilov.gridview.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -27,15 +28,14 @@ class GridAdapter(private val imageList: List<Int>,
         return 0L
     }
 
+    @SuppressLint("ViewHolder")
     override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View {
         var view = view
         if (layoutInflater == null){
             layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         }
 
-        if (view == null){
-            view = layoutInflater?.inflate(R.layout.grid_view_item, viewGroup, false)
-        }
+        view = layoutInflater?.inflate(R.layout.grid_view_item, viewGroup, false)
 
         val imageView = view?.findViewById<ImageView>(R.id.imageViewGridAdapter)
         imageView!!.setImageResource(imageList[position])
