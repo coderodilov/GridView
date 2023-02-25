@@ -1,4 +1,4 @@
-package uz.coderodilov.gridview
+package uz.coderodilov.gridview.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,8 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
+import uz.coderodilov.gridview.MainActivity
+import uz.coderodilov.gridview.R
 import uz.coderodilov.gridview.adapter.ViewPagerAdapter
 import uz.coderodilov.gridview.data.DataProvider
 import uz.coderodilov.gridview.databinding.ActivityDetailBinding
@@ -17,16 +19,24 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private var counter: Int = 0
     private var imageList: List<Int>? = null
+    private var titleList: List<String>? = null
     private var index : Int = 0
+    private var indexList : Int = 1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val dataProvider = DataProvider()
-        val viewPagerAdapter = ViewPagerAdapter(applicationContext)
 
-        imageList = dataProvider.getImageList()
+        indexList = intent.getIntExtra("indexList", 1)
+        imageList = dataProvider.getImageList(indexList)
+        titleList = dataProvider.getTitleList(indexList)
+
+        val viewPagerAdapter = ViewPagerAdapter(imageList!!, titleList!!, applicationContext)
+
+        imageList = dataProvider.getImageList(1)
         index = intent.getIntExtra("index", 0)
 
         loadViewPagerSettings(viewPagerAdapter)
@@ -89,7 +99,7 @@ class DetailActivity : AppCompatActivity() {
         var id = position
         counter = position
         id++
-        binding.playerId.text =  String.format("Player $id/${imageList!!.size}")
+        binding.playerId.text =  String.format("Top $id/${imageList!!.size}")
     }
 
     //endregion

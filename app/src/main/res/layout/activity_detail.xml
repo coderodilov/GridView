@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:background="#151515"
-    tools:context=".DetailActivity">
+    tools:context=".ui.DetailActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

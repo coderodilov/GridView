@@ -12,11 +12,10 @@ import uz.coderodilov.gridview.R
 import uz.coderodilov.gridview.data.DataProvider
 import java.util.Objects
 
-class ViewPagerAdapter(context: Context): PagerAdapter() {
+class ViewPagerAdapter(private val imageList: List<Int>,
+                       private val titleList: List<String>,
+                       context: Context): PagerAdapter() {
 
-    private val dataProvider = DataProvider()
-    private val imageList = dataProvider.getImageList()
-    private val titleList = dataProvider.getTitleList()
     private var layoutInflater : LayoutInflater? = null
 
     init {
