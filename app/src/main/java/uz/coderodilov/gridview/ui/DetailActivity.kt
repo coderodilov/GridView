@@ -58,9 +58,7 @@ class DetailActivity : AppCompatActivity() {
         })
 
         binding.btnBack.setOnClickListener{
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            onBackPressed()
         }
     }
 
@@ -139,10 +137,5 @@ class DetailActivity : AppCompatActivity() {
     }
     //endregion
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        val intent = Intent(applicationContext, MainActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
+
 }

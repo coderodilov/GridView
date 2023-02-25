@@ -31,9 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.title.text = title
 
         binding.btnBack.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+           onBackPressed()
         }
 
         binding.btnGridThree.setOnClickListener {
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("index", position)
             intent.putExtra("indexList", index)
             startActivity(intent)
-            finish()
+
         }
 
     }
@@ -58,10 +56,4 @@ class MainActivity : AppCompatActivity() {
         binding.gridView.numColumns = this
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
 }

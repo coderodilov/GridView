@@ -21,42 +21,42 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("index", 1)
             intent.putExtra("title", "Players")
             startActivity(intent)
-            finish()
+
         }
 
         binding.btnGames.setOnClickListener{
             intent.putExtra("index", 2)
             intent.putExtra("title", "Games")
             startActivity(intent)
-            finish()
+
         }
 
         binding.btnTechnology.setOnClickListener {
             intent.putExtra("index", 3)
             intent.putExtra("title", "Technology")
             startActivity(intent)
-            finish()
+
         }
 
         binding.btnCoding.setOnClickListener {
             intent.putExtra("index", 4)
             intent.putExtra("title", "Coding")
             startActivity(intent)
-            finish()
+
         }
 
         binding.btnCurrency.setOnClickListener{
             intent.putExtra("index", 5)
             intent.putExtra("title", "Currency")
             startActivity(intent)
-            finish()
+
         }
 
         binding.btnMobile.setOnClickListener{
             intent.putExtra("index", 6)
             intent.putExtra("title", "Mobile")
             startActivity(intent)
-            finish()
+
         }
     }
 
